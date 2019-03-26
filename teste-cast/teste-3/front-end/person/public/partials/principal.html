@@ -1,0 +1,42 @@
+<div class="jumbotron">
+    <h1 class="text-center">Persons Cast</h1>
+</div>
+
+<p ng-show="mensagem.length" class="alert alert-info">
+    {{mensagem}}
+</p>
+
+
+<div class="row">
+    <div class="col-md-12">
+    <form>
+         <div class="input-group">
+            <span class="input-group-btn">
+                <a class="btn btn-primary" href="/newPerson">
+                    New Person
+                </a>
+            </span>
+        </div> 
+    </form>
+    </div> <!-- fim col-md-12 -->
+</div> <!-- fim row -->
+<div class="row">
+    <meu-painel class="col-md-12" ng-repeat="p in persons" titulo="{{p.name}}" >
+        
+    <h4 class="text-left" title=""> Street: {{p.street}}</h4> 
+    <h4 class="text-left" title=""> Number: {{p.number}}</h4> 
+    
+    <div class="input-group">
+        <span class="input-group-btn">
+            <a class="btn btn-primary" href="/person/detail/{{p.id}}">
+                More details...
+            </a>
+        </span>
+    </div> 
+    <meu-botao-perigo nome="Remove" acao="removePerson(p.id)"></meu-botao-perigo>
+
+                <!--h4 class="text-left" title=""> Ativo: {{j.nomeStatus}}</h4--> 
+
+                
+    </meu-painel>
+</div>

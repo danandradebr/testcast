@@ -1,0 +1,99 @@
+<div class="page-header text-center">
+    <h1>{{person.name}}</h1>
+</div>
+
+<!-- novidade! Aqui será exibida mensagens para o usuário -->
+
+<p ng-show="mensagem.length" class="alert alert-info">{{mensagem}}</p>
+
+<form novalidate name="formulario" class="row" ng-submit="submeter()">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label>Name</label>
+            <input name="name" class="form-control" 
+                ng-model="person.name" required
+                ng-maxlength="50">
+            <span ng-show = "formulario.$submitted && formulario.name.$error.required" 
+                class="form-control alert-danger">
+                name required
+            </span> 
+            <span ng-show="formulario.$submitted && formulario.name.$error.maxlength" class="form-control alert-danger">
+                No máximo 50 caracteres!
+            </span>   
+        </div>
+        <div class="form-group">
+            <label>Street</label>
+            <input name="street" class="form-control" 
+                ng-model="person.street"
+                ng-maxlength="50">
+            <span ng-show="formulario.$submitted && formulario.street.$error.maxlength" class="form-control alert-danger">
+                No máximo 50 caracteres!
+            </span>   
+        </div>
+        <div class="form-group">
+            <label>Number</label>
+            <input name="number" class="form-control" 
+                ng-model="person.number"
+                ng-maxlength="15">
+            <span ng-show="formulario.$submitted && formulario.number.$error.maxlength" class="form-control alert-danger">
+                No máximo 15 caracteres!
+            </span>   
+        </div>    
+        <div class="form-group">
+            <label>Neighborhood</label>
+            <input name="neighborhood" class="form-control" 
+                ng-model="person.neighborhood"
+                ng-maxlength="50">
+            <span ng-show="formulario.$submitted && formulario.neighborhood.$error.maxlength" class="form-control alert-danger">
+                No máximo 50 caracteres!
+            </span>   
+        </div>
+        <div class="form-group">
+            <label>City</label>
+            <input name="city" class="form-control" 
+                ng-model="person.city"
+                ng-maxlength="50">
+            <span ng-show="formulario.$submitted && formulario.city.$error.maxlength" class="form-control alert-danger">
+                No máximo 50 caracteres!
+            </span>   
+        </div>
+        <div class="form-group">
+            <label>State</label>
+            <input name="state" class="form-control" 
+                ng-model="person.state"
+                ng-maxlength="50">
+            <span ng-show="formulario.$submitted && formulario.state.$error.maxlength" class="form-control alert-danger">
+                No máximo 50 caracteres!
+            </span>   
+        </div>
+        <div class="form-group">
+            <label>Cellphone</label>
+            <input name="cellphone" class="form-control" 
+                ng-model="person.cellphone"
+                ng-maxlength="16">
+            <span ng-show="formulario.$submitted && formulario.cellphone.$error.maxlength" class="form-control alert-danger">
+                No máximo 16 caracteres!
+            </span>   
+        </div>
+        <div class="form-group">
+            <label>Phone</label>
+            <input name="phone" class="form-control" 
+                ng-model="person.phone"
+                ng-maxlength="16">
+            <span ng-show="formulario.$submitted && formulario.phone.$error.maxlength" class="form-control alert-danger">
+                No máximo 16 caracteres!
+            </span>   
+        </div>
+        
+
+
+
+
+        <button type="submit" class="btn btn-primary" ng-disabled="formulario.$invalid">
+            Salvar
+        </button>
+         <a href="/" meu-focus class="btn btn-primary">Voltar</a>
+        <hr>
+    </div>
+    
+</form>
